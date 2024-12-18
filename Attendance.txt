@@ -1,4 +1,4 @@
 studentId:2413110798
 studentName:Taithut Phongsakul
-Topic: String method
-Date:12/11/2024
+Topic: method
+Date:18/11/2024
