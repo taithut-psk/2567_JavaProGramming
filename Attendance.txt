@@ -1,4 +1,4 @@
 studentId:2413110798
 studentName:Taithut Phongsakul
-Topic: method
-Date:18/11/2024
+Topic: class, opject
+Date:15/1/2024
