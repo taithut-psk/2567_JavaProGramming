@@ -17,12 +17,9 @@ public class LoanCalculator {
 	
 	public double calculateMonthlyPayment() {
 		
-		double rate = pdInterestRate / 100;
-		rate /= 12;
-		
-		double finalStep = Math.pow(1 + pdInterestRate / 100, pdYear);
-		
-		return (pdPrice * rate * finalStep) / (finalStep - 1);
+		return (pdPrice * ( (pdInterestRate / 100) / 12) ) * 
+			    Math.pow(1 + ( (pdInterestRate / 100) / 12) , pdYear * 12 ) / 
+			   (Math.pow(1 + ( (pdInterestRate / 100) / 12), pdYear * 12) - (1));
 	}
 	
 	public void displayLoanDetails() {
@@ -30,6 +27,6 @@ public class LoanCalculator {
 		System.out.println("Price: " + pdPrice);
 		System.out.println("Interest Rate: " + pdInterestRate + "%");
 		System.out.println("Loan Period: " + pdYear + " years");
-		System.out.println("Monthly Payment: " + calculateMonthlyPayment());
+		System.out.println("Monthly Payment: " + String.format("%.2f", calculateMonthlyPayment()));
 	}
 }
