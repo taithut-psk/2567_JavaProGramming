@@ -28,14 +28,13 @@ public class Director {
     public String getGenderName() {
         if (Character.toUpperCase(gender) == 'M')
             return "Male";
-        else if (Character.toUpperCase(gender) == 'F')
+        if (Character.toUpperCase(gender) == 'F')
             return "Female";
-        else
-            return null;
+        return null;
     }
 
     public String toString() {
-        return getName() + getEmail() + getGenderName();
+        return String.format("%s (%s;%s)", getName(), getEmail(), getGenderName());
     }
 
 }

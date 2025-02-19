@@ -32,7 +32,7 @@ public class Movie {
     }
 
     public String toString() {
-        return getId() + getName() + "direct by " + director;
+        return String.format("%s %s direct by %s", getId(), getName(), getDirector());
     }
 
 }

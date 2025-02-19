@@ -9,14 +9,22 @@ public class Theater extends Movie {
     }
 
     Theater() {
-
+        this.theaterNo = 0;
     }
 
     public String getTheaterName() {
+
+        if (theaterNo == 15)
+            return "Premium Theater";
+        if ((theaterNo >= 12) && (theaterNo <= 14))
+            return "Sweet Theater";
+        if ((theaterNo >= 1) && (theaterNo <= 11))
+            return "Basic Theater";
+
         return null;
     }
 
     public String toString() {
-        return super.toString();
+        return String.format("%s: %s", getTheaterName(), super.toString());
     }
 }
