@@ -5,14 +5,15 @@ public class Drink {
 
     Drink(int type, char size) {
         this.type = type;
-        this.size = size;
+        this.size = Charactor.toUpperCase(size);
     }
 
     Drink() {
-
+        this(0, ' ');
     }
 
     String getTypeName() {
+
         return switch (type) {
             case 1 -> "Hot";
             case 2 -> "Cold";
@@ -21,27 +22,35 @@ public class Drink {
     }
 
     int getTypePrice() {
+
         return switch (type) {
-            case 1 -> "asdas";
-            case 2 -> "asdasd";
+            case 1 -> 10;
+            case 2 -> 20;
             default -> 0;
         };
     }
 
     String getSizeName() {
+
+        return switch (size) {
+            case 'S' -> "Small";
+            case 'M' -> "Medium";
+            case 'L' -> "Large";
+            default -> null;
+        };
+    }
+
+    int getSizePrice() {
+
         return switch (size) {
             case 'S' -> 15;
-            case 'M' -> 15;
+            case 'M' -> 20;
             case 'L' -> 25;
             default -> 0;
         };
     }
 
-    int getSizePrice() {
-        return null;
-    }
-
     int getTotalPrice() {
-        return null;
+        return getTypePrice() + getSizePrice();
     }
 }

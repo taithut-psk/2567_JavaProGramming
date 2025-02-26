@@ -5,10 +5,11 @@ public class Barista {
 
     Barista(String name, char gender) {
         this.name = name;
-        this.gender = gender;
+        this.gender = Character.toUpperCase(gender);
     }
 
     Barista() {
+        this(null, ' ');
     }
 
     String getName() {
@@ -16,10 +17,16 @@ public class Barista {
     }
 
     String getGenderName() {
-        if (gender == 'M')
-            return "Male";
-        if (gender == 'F')
-            return "Female";
-        return " ";
+
+        return switch (gender) {
+            case 'M' -> "Male";
+            case 'F' -> "Female";
+            default -> " ";
+        };
+
+    }
+
+    public String toString() {
+        return getName() + " (" + getGenderName() + ")";
     }
 }
